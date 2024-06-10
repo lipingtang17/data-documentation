@@ -5,10 +5,10 @@ add_page_title()
 
 show_pages(
     [   
-        Page("dezoomcamp/DE_Zoomcamp.py", "DE Zoomcamp", "💻"),
+        Page("dezoomcamp/DE_Zoomcamp.py", "NotJustWeb: Fine-Grained Web and Non-Web Dataset in Large Scale", "💻"),
 
-        # # 2024 Content
-        Section("DE Zoomcamp 2024", "🧙‍♂️"),
+        # # Web Data
+        Section("Web Data", "📄"),
         Page("dezoomcamp/2024_cohort/Course_Overview.py", "Course Overview", "📚", in_section=True),
         Page("dezoomcamp/2024_cohort/Module_1_Introduction_&_Prerequisites.py", "Module 1 Introduction & Prerequisites", "1️⃣", in_section=True),
         Page("dezoomcamp/2024_cohort/Module_2_Workflow_Orchestration.py", "Module 2 Workflow Orchestration", "2️⃣", in_section=True),
@@ -20,8 +20,8 @@ show_pages(
         Page("dezoomcamp/2024_cohort/Module_6_Stream_Processing.py", "Module 6 Stream Processing", "6️⃣", in_section=True),
         Page("dezoomcamp/2024_cohort/Course_Project.py", "Course Project", "🏆", in_section=True),
 
-        # 2023 Content
-        Section("DE Zoomcamp 2023", "👨‍🔧"),
+        # Non-Web Data
+        Section("Non-Web Data", "📚"),
         Page("dezoomcamp/2023_cohort/Course_Overview.py", "Course Overview", "📚", in_section=True),
         Page("dezoomcamp/2023_cohort/Week_1_Introduction_&_Prerequisites.py", "Week 1 Introduction & Prerequisites", "1️⃣", in_section=True),
         Page("dezoomcamp/2023_cohort/Week_2_Workflow_Orchestration.py", "Week 2 Workflow Orchestration", "2️⃣", in_section=True),
