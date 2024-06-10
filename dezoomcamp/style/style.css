@@ -14,8 +14,8 @@ input[type=text], input[type=email], textarea {
   }
   
   button[type=submit] {
-    background-color: #1e40af;
-    color: #dbeafe;
+    /* background-color: #1e40af;
+    color: #dbeafe; */
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
@@ -23,7 +23,7 @@ input[type=text], input[type=email], textarea {
     margin-top: 1.5rem;
   }
   
-  button[type=submit]:hover {
+  /* button[type=submit]:hover {
     background-color: #1d4ed8;
-  }
+  } */
   
