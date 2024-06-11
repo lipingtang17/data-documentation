@@ -3,6 +3,8 @@ import json
 from streamlit_echarts import st_echarts
 from st_pages import Page, Section, show_pages, add_page_title, hide_pages
 
+st.set_page_config(layout="wide")
+
 add_page_title()
 
 show_pages(
