@@ -5,7 +5,7 @@ add_page_title()
 
 show_pages(
     [   
-        Page("dezoomcamp/DE_Zoomcamp.py", "NotJustWeb: Fine-Grained Web and Non-Web Dataset in Large Scale", "💻"),
+        Page("dezoomcamp/streamlit_app.py", "NotJustWeb: Fine-Grained Web and Non-Web Dataset in Large Scale", "💻"),
 
         # # Web Data
         Section("Web Data", "📄"),
