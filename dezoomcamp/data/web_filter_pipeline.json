@@ -1,0 +1,81 @@
+{
+    "nodes": [
+      {
+        "name": "Common Crawl WARC"
+      },
+      {
+        "name": "Text Extraction"
+      },
+      {
+        "name": "Language Identification"
+      },
+      {
+        "name": "URL Filtering"
+      },
+      {
+        "name": "Line-wise Corrections"
+      },
+      {
+        "name": "Repetition-based Filtering"
+      },
+      {
+        "name": "Doc-statistics-based Filtering"
+      },
+      {
+        "name": "Correction-based Filtering"
+      },
+      {
+        "name": "Local Exact Deduplication"
+      },
+      {
+        "name": "Global Fuzzy Deduplication"
+      }
+    ],
+    "links": [
+      {
+        "source": "Common Crawl WARC",
+        "target": "Text Extraction",
+        "value": 0.9698
+      },
+      {
+        "source": "Text Extraction",
+        "target": "Language Identification",
+        "value": 0.4384
+      },
+      {
+        "source": "Language Identification",
+        "target": "URL Filtering",
+        "value": 0.4359
+      },
+      {
+        "source": "URL Filtering",
+        "target": "Line-wise Corrections",
+        "value": 0.4287
+      },
+      {
+        "source": "Line-wise Corrections",
+        "target": "Repetition-based Filtering",
+        "value": 0.3243
+      },
+      {
+        "source": "Repetition-based Filtering",
+        "target": "Doc-statistics-based Filtering",
+        "value": 0.2477
+      },
+      {
+        "source": "Doc-statistics-based Filtering",
+        "target": "Correction-based Filtering",
+        "value": 0.2034
+      },
+      {
+        "source": "Correction-based Filtering",
+        "target": "Local Exact Deduplication",
+        "value": 0.1675
+      },
+      {
+        "source": "Local Exact Deduplication",
+        "target": "Global Fuzzy Deduplication",
+        "value": 0.1000
+      }
+    ]
+  }

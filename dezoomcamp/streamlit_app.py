@@ -1,4 +1,6 @@
 import streamlit as st
+import json
+from streamlit_echarts import st_echarts
 from st_pages import Page, Section, show_pages, add_page_title, hide_pages
 
 add_page_title()
@@ -51,91 +53,162 @@ st.info("Original Course Repository on [Github](https://github.com/DataTalksClub
 
 st.markdown("---")
 
-with st.expander("Sign up here for 2024 Cohort"):
-    st.markdown("""
+
+with open("./data/web_filter_pipeline.json", "r") as f:
+    data = json.loads(f.read())
+
+option = {
+    "title": {"text": "Web Data Processing Pipeline"},
+    "tooltip": {"trigger": "item", "triggerOn": "mousemove"},
+    "series": [
+        {
+            "type": "sankey",
+            "data": data["nodes"],
+            "links": data["links"],
+            "": {"focus": "adjacency"},
+            "levels": [
+                {
+                    "depth": 0,
+                    "itemStyle": {"color": "#EE635F"},
+                    "lineStyle": {"color": "source", "opacity": 0.6},
+                },
+                {
+                    "depth": 1,
+                    "itemStyle": {"color": "#EE915F"},
+                    "lineStyle": {"color": "source", "opacity": 0.6},
+                },
+                {
+                    "depth": 2,
+                    "itemStyle": {"color": "#EEBE5F"},
+                    "lineStyle": {"color": "source", "opacity": 0.6},
+                },
+                {
+                    "depth": 3,
+                    "itemStyle": {"color": "#EED65F"},
+                    "lineStyle": {"color": "source", "opacity": 0.6},
+                },
+                {
+                    "depth": 4,
+                    "itemStyle": {"color": "#E5EE5F"},
+                    "lineStyle": {"color": "source", "opacity": 0.6},
+                },
+                {
+                    "depth": 5,
+                    "itemStyle": {"color": "#C5EE5F"},
+                    "lineStyle": {"color": "source", "opacity": 0.6},
+                },
+                {
+                    "depth": 6,
+                    "itemStyle": {"color": "#8CEE5F"},
+                    "lineStyle": {"color": "source", "opacity": 0.6},
+                },
+                {
+                    "depth": 7,
+                    "itemStyle": {"color": "#5FEE6C"},
+                    "lineStyle": {"color": "source", "opacity": 0.6},
+                },
+                {
+                    "depth": 8,
+                    "itemStyle": {"color": "#5FEEC7"},
+                    "lineStyle": {"color": "source", "opacity": 0.6},
+                },
+            ],
+            "lineStyle": {"curveness": 0.5},
+            "label": {
+                    "position": 'right'
+                }
+        }
+    ],
+}
+st_echarts(option, height="500px")
+
+# st.markdown("---")
+
+# with st.expander("Sign up here for 2024 Cohort"):
+#     st.markdown("""
     
-    <a href="https://airtable.com/appzbS8Pkg9PL254a/shr6oVXeQvSI5HuWD"><img src="https://user-images.githubusercontent.com/875246/185755203-17945fd1-6b64-46f2-8377-1011dcb1a444.png" height="50" /></a>
+#     <a href="https://airtable.com/appzbS8Pkg9PL254a/shr6oVXeQvSI5HuWD"><img src="https://user-images.githubusercontent.com/875246/185755203-17945fd1-6b64-46f2-8377-1011dcb1a444.png" height="50" /></a>
 
-    #
+#     #
 
-    - Register in [DataTalks.Club's Slack](https://datatalks.club/slack.html)
-    - Join the [`#course-data-engineering`](https://app.slack.com/client/T01ATQK62F8/C01FABYF2RG) channel
-    - Join the [course Telegram channel with announcements](https://t.me/dezoomcamp)
-    - The videos are published on [DataTalks.Club's YouTube channel](https://www.youtube.com/c/DataTalksClub) in [the course playlist](https://www.youtube.com/playlist?list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
-    - [Frequently asked technical questions](https://docs.google.com/document/d/19bnYs80DwuUimHM65UV3sylsCn2j1vziPOwzBwQrebw/edit?usp=sharing)
+#     - Register in [DataTalks.Club's Slack](https://datatalks.club/slack.html)
+#     - Join the [`#course-data-engineering`](https://app.slack.com/client/T01ATQK62F8/C01FABYF2RG) channel
+#     - Join the [course Telegram channel with announcements](https://t.me/dezoomcamp)
+#     - The videos are published on [DataTalks.Club's YouTube channel](https://www.youtube.com/c/DataTalksClub) in [the course playlist](https://www.youtube.com/playlist?list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
+#     - [Frequently asked technical questions](https://docs.google.com/document/d/19bnYs80DwuUimHM65UV3sylsCn2j1vziPOwzBwQrebw/edit?usp=sharing)
         
-    #""", unsafe_allow_html=True)
+#     #""", unsafe_allow_html=True)
 
-st.markdown("""
-### 👨‍🎓 Taking the course
+# st.markdown("""
+# ### 👨‍🎓 Taking the course
 
-##### 👨‍👦‍👦 2024 Cohort
+# ##### 👨‍👦‍👦 2024 Cohort
 
-* **Start**: 15 January 2024 (Monday) at 17:00 CET
-* **Registration link**: https://airtable.com/shr6oVXeQvSI5HuWD
-* [Cohort folder](cohorts/2024/) with homeworks and deadlines 
-
-
-##### 👨‍🔧 Self-paced mode
-
-All the materials of the course are freely available, so that you
-can take the course at your own pace
-
-* Follow the suggested syllabus (see below) week by week
-* You don't need to fill in the registration form. Just start watching the videos and join Slack
-* Check [FAQ](https://docs.google.com/document/d/19bnYs80DwuUimHM65UV3sylsCn2j1vziPOwzBwQrebw/edit?usp=sharing) if you have problems
-* If you can't find a solution to your problem in FAQ, ask for help in Slack
-
-### 🔎 Overview""", unsafe_allow_html=True)
+# * **Start**: 15 January 2024 (Monday) at 17:00 CET
+# * **Registration link**: https://airtable.com/shr6oVXeQvSI5HuWD
+# * [Cohort folder](cohorts/2024/) with homeworks and deadlines 
 
 
-st.image("https://raw.githubusercontent.com/DataTalksClub/data-engineering-zoomcamp/main/images/architecture/photo1700757552.jpeg")
+# ##### 👨‍🔧 Self-paced mode
+
+# All the materials of the course are freely available, so that you
+# can take the course at your own pace
+
+# * Follow the suggested syllabus (see below) week by week
+# * You don't need to fill in the registration form. Just start watching the videos and join Slack
+# * Check [FAQ](https://docs.google.com/document/d/19bnYs80DwuUimHM65UV3sylsCn2j1vziPOwzBwQrebw/edit?usp=sharing) if you have problems
+# * If you can't find a solution to your problem in FAQ, ask for help in Slack
+
+# ### 🔎 Overview""", unsafe_allow_html=True)
 
 
-st.markdown("""
-### 📓 Prerequisites
+# st.image("https://raw.githubusercontent.com/DataTalksClub/data-engineering-zoomcamp/main/images/architecture/photo1700757552.jpeg")
 
-To get the most out of this course, you should feel comfortable with coding and command line
-and know the basics of SQL. Prior experience with Python will be helpful, but you can pick
-Python relatively fast if you have experience with other programming languages.
 
-Prior experience with data engineering is not required.
+# st.markdown("""
+# ### 📓 Prerequisites
 
-### 👨‍🏫 Instructors
+# To get the most out of this course, you should feel comfortable with coding and command line
+# and know the basics of SQL. Prior experience with Python will be helpful, but you can pick
+# Python relatively fast if you have experience with other programming languages.
 
-- [Ankush Khanna](https://linkedin.com/in/ankushkhanna2)
-- [Victoria Perez Mola](https://www.linkedin.com/in/victoriaperezmola/)
-- [Alexey Grigorev](https://linkedin.com/in/agrigorev)
-- [Matt Palmer](https://www.linkedin.com/in/matt-palmer/)
-- [Luis Oliveira](https://www.linkedin.com/in/lgsoliveira/)
-- [Michael Shoemaker](https://www.linkedin.com/in/michaelshoemaker1/)
+# Prior experience with data engineering is not required.
 
-Past instructors:
+# ### 👨‍🏫 Instructors
 
-- [Sejal Vaidya](https://www.linkedin.com/in/vaidyasejal/)
-- [Irem Erturk](https://www.linkedin.com/in/iremerturk/)
+# - [Ankush Khanna](https://linkedin.com/in/ankushkhanna2)
+# - [Victoria Perez Mola](https://www.linkedin.com/in/victoriaperezmola/)
+# - [Alexey Grigorev](https://linkedin.com/in/agrigorev)
+# - [Matt Palmer](https://www.linkedin.com/in/matt-palmer/)
+# - [Luis Oliveira](https://www.linkedin.com/in/lgsoliveira/)
+# - [Michael Shoemaker](https://www.linkedin.com/in/michaelshoemaker1/)
 
-### ❔ Asking for help in Slack
+# Past instructors:
 
-The best way to get support is to use [DataTalks.Club's Slack](https://datatalks.club/slack.html). Join the [`#course-data-engineering`](https://app.slack.com/client/T01ATQK62F8/C01FABYF2RG) channel.
+# - [Sejal Vaidya](https://www.linkedin.com/in/vaidyasejal/)
+# - [Irem Erturk](https://www.linkedin.com/in/iremerturk/)
 
-To make discussions in Slack more organized:
+# ### ❔ Asking for help in Slack
 
-* Follow [these recommendations](asking-questions.md) when asking for help
-* Read the [DataTalks.Club community guidelines](https://datatalks.club/slack/guidelines.html)
+# The best way to get support is to use [DataTalks.Club's Slack](https://datatalks.club/slack.html). Join the [`#course-data-engineering`](https://app.slack.com/client/T01ATQK62F8/C01FABYF2RG) channel.
 
----
+# To make discussions in Slack more organized:
+
+# * Follow [these recommendations](asking-questions.md) when asking for help
+# * Read the [DataTalks.Club community guidelines](https://datatalks.club/slack/guidelines.html)
+
+# ---
             
-### ⭐ Star the project on Github  <iframe src="https://ghbtns.com/github-btn.html?user=hamagistral&repo=de-zoomcamp-ui&type=star&count=true"  width="150" height="20" title="GitHub"></iframe>   
+# ### ⭐ Star the project on Github  <iframe src="https://ghbtns.com/github-btn.html?user=hamagistral&repo=de-zoomcamp-ui&type=star&count=true"  width="150" height="20" title="GitHub"></iframe>   
             
-##### 🖼️ Course UI was made by [Hamagistral](https://github.com/Hamagistral) 
-""", unsafe_allow_html=True)
+# ##### 🖼️ Course UI was made by [Hamagistral](https://github.com/Hamagistral) 
+# """, unsafe_allow_html=True)
 
-hide_streamlit_style = """
-<style>
-#MainMenu {visibility: hidden;}
-footer {visibility: hidden;}
-</style>
-"""
+# hide_streamlit_style = """
+# <style>
+# #MainMenu {visibility: hidden;}
+# footer {visibility: hidden;}
+# </style>
+# """
 
-st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+# st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
