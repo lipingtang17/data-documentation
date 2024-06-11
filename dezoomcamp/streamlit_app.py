@@ -115,7 +115,7 @@ option = {
             ],
             "lineStyle": {"curveness": 0.5},
             "label": {
-                    "position": 'right'
+                    "position": 'inside'
                 }
         }
     ],
