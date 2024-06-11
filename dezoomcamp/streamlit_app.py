@@ -54,7 +54,7 @@ st.info("Original Course Repository on [Github](https://github.com/DataTalksClub
 st.markdown("---")
 
 
-with open("./data/web_filter_pipeline.json", "r") as f:
+with open("dezoomcamp/web_filter_pipeline.json", "r") as f:
     data = json.loads(f.read())
 
 option = {
